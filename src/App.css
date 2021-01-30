@@ -1,4 +1,263 @@
 
-body{
-  background-color: #121725;
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap');
+
+:root {
+  --dark: #121725;
+  --green: #54E6AF;
+  --green-active: #B3FFE2;
+  --gray: #2C344B;
+  --light-gray: #5A668A;
+  --light-purple: #C2CBE5;
+  --font-primary: "Chivo", sans-serif;
+  --font-weight: 300;
+  --border-radius: 50px;
 }
+
+input {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+body{
+  background-color: var(--dark);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight);
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--light-purple);
+  /* overflow: hidden; */
+  
+}
+
+.App{
+  /* border: 5px orange solid; */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App::before {
+  /* border: 5px violet solid; */
+  position: absolute;
+  content: "";
+  background-image: url("assets/desktop/image-host.jpg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  width: 98vw;
+  height: 98vh;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight);
+  font-style: normal;
+  line-height: 119%;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+strong {
+  font-weight: var(--font-weight);
+  color: #FFFFFF;
+}
+
+/* LAYOUT */
+
+.wrapper {
+  /* border: 5px violet solid; */
+  display: flex;
+  width: 99vw;
+  height: 95vh;
+  /* flex-wrap: wrap; */
+}
+
+.dots {
+  align-self: flex-end;
+  margin: 3vh 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80vw;
+  height: 80vh;
+  margin: 10vh 0 10vh 5vw;
+}
+
+.wrapper > * {
+  /* border: 5px red solid; */
+
+}
+
+.main {
+  background-color: var(--dark);
+  width: 65vw;
+}
+
+.desc {
+  width: 60%;
+}
+
+form {
+  width: 60%;
+  background-color: var(--gray);
+  border-radius: var(--border-radius);
+  padding: 0 5px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5vh 0;
+}
+
+input[type="email"] {
+  color: #ffffff;
+  margin: 0 10px;
+  /* opacity: 50%; */
+}
+
+input[type="submit"] {
+  background-color: var(--green);
+  border-radius: var(--border-radius);
+  padding: 10px 30px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+*:focus {
+  outline: none;
+  color: #ffffff;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.logo {
+  opacity: 50%;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .dots{
+    align-self: flex-start;
+  }
+
+  .dots > * {
+    width: 80%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 75%;
+  }
+  
+}
+
+
+@media only screen and (max-width: 500px) {
+
+  .App::before {
+    /* border: 5px solid red; */
+    overflow: hidden;
+    background-image: url("assets/mobile/image-host.jpg");
+    background-position: center center;
+    background-size: 100%;
+    width: 120vw;
+    height: 120vh;
+    opacity: 0.3;
+  }
+
+  main {
+    margin: 5vh 0 5vh 5vw;
+    width: 100vw;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main {
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desc {
+    width: 90%;
+  }
+
+  form {
+    width: 80%;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    padding: 0 5px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    order: 2;
+    margin: 0;
+  }
+
+
+  
+  input[type="email"] {
+    background-color: var(--gray);
+    color: #ffffff;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 5vh 0; */
+  }
+
+  
+  .dots {
+    display: none;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 80%;
+  }
+
+}
+
