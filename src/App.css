@@ -73,14 +73,14 @@ strong {
   color: #FFFFFF;
 }
 
+
+
 /* LAYOUT */
 
 .wrapper {
-  /* border: 5px violet solid; */
   display: flex;
   width: 99vw;
   height: 95vh;
-  /* flex-wrap: wrap; */
 }
 
 .dots {
@@ -97,10 +97,6 @@ main {
   margin: 10vh 0 10vh 5vw;
 }
 
-.wrapper > * {
-  /* border: 5px red solid; */
-
-}
 
 .main {
   background-color: var(--dark);
@@ -111,6 +107,13 @@ main {
   width: 60%;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0 10px 0;
+}
+
 form {
   width: 60%;
   background-color: var(--gray);
@@ -118,10 +121,10 @@ form {
   padding: 0 5px 0 10px;
   display: flex;
   justify-content: space-between;
-  margin: 5vh 0;
+  margin: 5vh 0 0;
 }
 
-input[type="email"] {
+input[type="text"] {
   color: #ffffff;
   margin: 0 10px;
   /* opacity: 50%; */
@@ -135,10 +138,15 @@ input[type="submit"] {
   font-weight: bold;
 }
 
+input[type="submit"]:hover {
+  background-color: var(--green-active);
+}
+
 *:focus {
   outline: none;
   color: #ffffff;
 }
+
 
 .logos {
   display: flex;
@@ -218,6 +226,10 @@ input[type="submit"] {
     width: 90%;
   }
 
+  .error {
+    order: 2;
+  }
+
   form {
     width: 80%;
     background-color: transparent;
@@ -226,13 +238,13 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    order: 2;
+    order: 3;
     margin: 0;
   }
 
 
   
-  input[type="email"] {
+  input[type="text"] {
     background-color: var(--gray);
     color: #ffffff;
     margin: 10px 0;
@@ -240,7 +252,6 @@ input[type="submit"] {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
-    /* margin: 5vh 0; */
   }
 
   
